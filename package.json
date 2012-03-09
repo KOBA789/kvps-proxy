@@ -1,0 +1,16 @@
+{
+  "author": "KOBA789 <kobahide789@gmail.com> (http://koba789.com/)",
+  "name": "kvps-proxy",
+  "version": "0.0.0",
+  "repository": {
+    "url": ""
+  },
+  "engines": {
+    "node": "~0.6.10"
+  },
+  "dependencies": {
+    "http-proxy": ">= 0.8"
+  },
+  "devDependencies": {},
+  "optionalDependencies": {}
+}
