@@ -1,14 +1,5 @@
-var cluster = require('cluster');
-var numCPUs = require('os').cpus().length;
-var KvpsProxy = require('./lib');
+var bouncy = require('bouncy');
 
-if (cluster.isMaster) {
-  for (var i = 0; i < numCPUs; i++) {
-    cluster.fork();
-  }
-  cluster.on('death', function(worker) {
-    console.log('worker ' + worker.pid + ' died');
-  });
-} else {
-  KvpsProxy.listen(8124);
-}
+bouncy(function (req, bounce) {
+  bounce(req.headers.host, 80);
+}).listen(80);
